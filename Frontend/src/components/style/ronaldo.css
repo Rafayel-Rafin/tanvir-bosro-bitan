@@ -1,0 +1,282 @@
+.not-found-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.error-code-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 50px;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.error-code {
+    font-size: 100px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out, pulse 2s infinite;
+}
+
+.error-message {
+    font-size: 24px;
+    margin-bottom: 10px;
+    animation: fadeIn 2.5s ease-out;
+}
+
+
+.error-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation: fadeIn 3s ease-out;
+}
+
+
+.floating-orbs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    animation: orbsMove 10s ease-in-out infinite;
+}
+
+.orb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: float 3s infinite alternate, orbColorChange 4s infinite alternate;
+}
+
+.orb1 {
+    animation-delay: 0.5s;
+}
+
+.orb2 {
+    animation-delay: 1s;
+}
+
+.orb3 {
+    animation-delay: 1.5s;
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes orbsMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes orbColorChange {
+    0% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        background-color: rgba(0, 255, 255, 0.4);
+    }
+
+    100% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.go-back-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInButton 4s ease-in-out forwards;
+}
+
+.go-back-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 81, 47, 0.5);
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ronaldo-container {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    animation: ronaldoMovement 5s infinite ease-in-out;
+}
+
+.ronaldo {
+    position: relative;
+    width: 60px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    animation: ronaldoKick 2s infinite ease-in-out;
+}
+
+.football {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 25px;
+    height: 25px;
+    background-color: #ff4500;
+    border-radius: 50%;
+    animation: ballMovement 3s infinite ease-in-out;
+}
+
+@keyframes ronaldoKick {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes ballMovement {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(150px) translateY(-50px);
+    }
+
+    100% {
+        transform: translateX(300px) translateY(0);
+    }
+}
+
+@keyframes ronaldoMovement {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50vw);
+    }
+}
